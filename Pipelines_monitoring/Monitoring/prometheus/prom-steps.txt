@@ -3,4 +3,15 @@
 2. tar xvfz prometheus-2.19.0.linux-amd64.tar.gz 
 
 3. cd prometheus-2.19.0.linux-amd64 
-4. ./prometheus --config.file=./prometheus.yml 
+4. ./prometheus --config.file=./prometheus.yml
+
+5. alertmanager
+./alertmanager --config.file=alertmanager.yml
+
+DISCOVERY:
+- job_name: 'node'
+    ec2_sd_configs:
+      - region: us-east-1
+        access_key: *********************
+        secret_key: *************************
+        port: 9100
